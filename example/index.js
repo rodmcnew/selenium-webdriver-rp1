@@ -16,7 +16,6 @@ require('geckodriver');
         await rp1.waitForElement('div#top_nav');
 
         await rp1.sleep(10000); //10 seconds
-
     } finally {
         await driver.quit();
     }
