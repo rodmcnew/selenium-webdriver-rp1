@@ -3,7 +3,7 @@
 This isn't highly refined kerosene. This is a helper for the selenium-webdriver 
 node package. This package provides these features:
 - Retries commands a number of times to allow apps time to load but still run through your tests as quickly as possible
-- Automatically waits for elements to both appear and become visible before acting upon them
+- Automatically waits for elements to both be in the dom and become visible before acting upon them
 - Only speaks in CSS selectors to simplify your tests
 - Detailed logging
 
