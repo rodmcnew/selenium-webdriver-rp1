@@ -17,10 +17,19 @@ OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 const {Builder, By, Key, until} = require('selenium-webdriver');
 
 module.exports.Rp1 = class Rp1 {
-    constructor(driver, logger) {
+    /**
+     * A helper that makes using the selenium-webdriver node package simple and reliable in Javascript.
+     *
+     * @param {object} driver The driver from the selenium-webdriver package
+     * @param {object} [config] Optional config overrides
+     */
+    constructor(driver, config) {
         this._driver = driver;
-        this._logger = logger;
-        this._config = {retrySleepTime: 1000, retryCount: 60};
+        this._config = Object.assign({}, {
+            logFunction: console.log,
+            retrySleepTime: 1000,
+            retryCount: 60
+        }, config);
     }
 
     async _retry(asyncFunctionToTry) {
@@ -36,14 +45,14 @@ module.exports.Rp1 = class Rp1 {
                     throw e;
                 }
                 await this.sleep(this._config.retrySleepTime);
-                this._logger('Retrying (' + tryNumber + '/' + this._config.retryCount + ')...');
+                this._config.logFunction('Retrying (' + tryNumber + '/' + this._config.retryCount + ')...');
             }
         }
     }
 
     async click(cssSelector) {
         const log = (message) => {
-            this._logger('click("' + cssSelector + '") - ' + message);
+            this._config.logFunction('click("' + cssSelector + '") - ' + message);
         };
         let element;
 
@@ -67,7 +76,7 @@ module.exports.Rp1 = class Rp1 {
 
     async waitForElement(cssSelector) {
         const log = (message) => {
-            this._logger('waitForElement("' + cssSelector + '") - ' + message);
+            this._config.logFunction('waitForElement("' + cssSelector + '") - ' + message);
         };
         let element;
 
@@ -86,7 +95,7 @@ module.exports.Rp1 = class Rp1 {
 
     async sendKeys(cssSelector, keys) {
         const log = (message) => {
-            this._logger('sendKeys("' + cssSelector + '", "' + keys + '") - ' + message);
+            this._config.logFunction('sendKeys("' + cssSelector + '", "' + keys + '") - ' + message);
         };
         let element;
 
@@ -108,7 +117,7 @@ module.exports.Rp1 = class Rp1 {
 
     async sleep(ms) {
         const log = (message) => {
-            this._logger('sleep(' + ms + ') - ' + message);
+            this._config.logFunction('sleep(' + ms + ') - ' + message);
         };
         log('Sleeping...');
         await new Promise(resolve => setTimeout(resolve, ms));

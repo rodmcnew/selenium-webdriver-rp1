@@ -1,0 +1,20 @@
+{
+  "name": "selenium-webdriver-rp1-example",
+  "version": "0.0.1",
+  "description": "An example usage of selenium-webdriver-rp1",
+  "main": "index.js",
+  "scripts": {
+    "test": "node ./index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "none"
+  },
+  "dependencies": {
+    "geckodriver": "^1.10.0",
+    "selenium-webdriver": "^4.0.0-alpha.1",
+    "selenium-webdriver-rp1": "^0.0.4"
+  },
+  "author": "Rod McNew",
+  "license": "ISC"
+}
