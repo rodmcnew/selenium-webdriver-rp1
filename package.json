@@ -1,6 +1,6 @@
 {
-  "name": "rp1",
-  "version": "0.0.1",
+  "name": "selenium-webdriver-rp1",
+  "version": "0.0.2",
   "description": "A helper that makes using the selenium-webdriver node package simple and reliable in Javascript.",
   "main": "index.js",
   "scripts": {
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/rodmcnew/rp1.git"
+    "url": "git+https://github.com/rodmcnew/selenium-webdriver-rp1.git"
   },
   "keywords": [
     "selenium",
