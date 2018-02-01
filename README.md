@@ -7,6 +7,11 @@ node package. This package provides these features:
 - Only speaks in CSS selectors to simplify your tests
 - Detailed logging
 
+#Installation
+```bash
+npm install selenium-webdriver-rp1
+```
+
 # Example Usage
 ```javascript
 const {Builder} = require('selenium-webdriver');
