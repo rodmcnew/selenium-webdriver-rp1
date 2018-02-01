@@ -1,4 +1,4 @@
-# Rp1
+# Selenium Webdriver Rp1
 
 This isn't highly refined kerosene. This is a helper for the selenium-webdriver 
 node package. This package provides these features:
