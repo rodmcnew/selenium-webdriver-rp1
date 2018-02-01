@@ -1,6 +1,6 @@
 {
   "name": "selenium-webdriver-rp1",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "A helper that makes using the selenium-webdriver node package simple and reliable in Javascript.",
   "main": "index.js",
   "scripts": {
@@ -22,7 +22,7 @@
   "author": "Rod McNew",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/rodmcnew/rp1/issues"
+    "url": "https://github.com/rodmcnew/selenium-webdriver-rp1/issues"
   },
-  "homepage": "https://github.com/rodmcnew/rp1#readme"
+  "homepage": "https://github.com/rodmcnew/selenium-webdriver-rp1#readme"
 }
