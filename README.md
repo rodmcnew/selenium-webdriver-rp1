@@ -7,7 +7,7 @@ node package. This package provides these features:
 - Only speaks in CSS selectors to simplify your tests
 - Detailed logging
 
-# ISC License
+# Open Source ISC License
 Copyright 2018 Rodney McNew
 
 Permission to use, copy, modify, and/or distribute this software for any 
