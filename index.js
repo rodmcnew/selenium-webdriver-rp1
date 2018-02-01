@@ -16,7 +16,7 @@ OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 
 const {Builder, By, Key, until} = require('selenium-webdriver');
 
-module.exports.default = class Rp1 {
+module.exports.Rp1 = class Rp1 {
     constructor(driver, logger) {
         this._driver = driver;
         this._logger = logger;
