@@ -24,5 +24,8 @@
   "bugs": {
     "url": "https://github.com/rodmcnew/selenium-webdriver-rp1/issues"
   },
-  "homepage": "https://github.com/rodmcnew/selenium-webdriver-rp1#readme"
+  "homepage": "https://github.com/rodmcnew/selenium-webdriver-rp1#readme",
+  "devDependencies": {
+    "selenium-webdriver": "^4.0.0-alpha.1"
+  }
 }
