@@ -97,7 +97,7 @@ module.exports.Rp1 = class Rp1 {
      * Waits for the element to be in the dom and visible. Then waits for it's value to pass
      * the user-defined passed in test function.
      *
-     * @param cssSelector
+     * @param {string} cssSelector
      * @param {function} testFunction(value) user defined function returns true if passes test, false if not
      * @return {Promise<void>}
      */
@@ -132,7 +132,7 @@ module.exports.Rp1 = class Rp1 {
     }
 
     /**
-     * @param cssSelector
+     * @param {string} cssSelector
      * @return {Promise<void>}
      */
     async getElementValue(cssSelector) {
