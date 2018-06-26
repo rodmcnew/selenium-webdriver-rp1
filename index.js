@@ -93,6 +93,68 @@ module.exports.Rp1 = class Rp1 {
         log('Done.');
     }
 
+    /**
+     * Waits for the element to be in the dom and visible. Then waits for it's value to pass
+     * the user-defined passed in test function.
+     *
+     * @param cssSelector
+     * @param {function} testFunction(value) user defined function returns true if passes test, false if not
+     * @return {Promise<void>}
+     */
+    async waitForElementValueToPassTest(cssSelector, testFunction) {
+        const log = (message) => {
+            this._config.logFunction('waitForElement("' + cssSelector + '") - ' + message);
+        };
+        let element;
+
+        log('Finding element...');
+        await this._retry(async () => {
+            element = await this._driver.findElement(By.css(cssSelector));
+        });
+
+        log('Waiting until element is visible...');
+        await this._retry(async () => {
+            await this._driver.wait(until.elementIsVisible(element));
+        });
+
+        log('Waiting until element value passes user defined test function...');
+        await this._retry(async () => {
+            const elementValue = await element.getAttribute('value');
+            if (testFunction(elementValue)) {
+                log('The element\'s value has passed the user defined test function.');
+                return;
+            } else {
+                throw 'The element\'s value did NOT pass the user defined test function.';
+            }
+        });
+
+        log('Done.');
+    }
+
+    /**
+     * @param cssSelector
+     * @return {Promise<void>}
+     */
+    async getElementValue(cssSelector) {
+        const log = (message) => {
+            this._config.logFunction('waitForElement("' + cssSelector + '") - ' + message);
+        };
+        let element;
+
+        log('Finding element...');
+        await this._retry(async () => {
+            element = await this._driver.findElement(By.css(cssSelector));
+        });
+
+        log('Waiting until element is visible...');
+        await this._retry(async () => {
+            await this._driver.wait(until.elementIsVisible(element));
+        });
+
+        log('Getting value from element...');
+        return element.getAttribute("value")
+    }
+
     async sendKeys(cssSelector, keys) {
         const log = (message) => {
             this._config.logFunction('sendKeys("' + cssSelector + '", "' + keys + '") - ' + message);
