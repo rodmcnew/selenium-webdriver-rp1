@@ -40,7 +40,7 @@ require('geckodriver');
 ```
 
 # Open Source ISC License
-Copyright 2018 Rodney McNew
+Copyright 2020 Reliv International
 
 Permission to use, copy, modify, and/or distribute this software for any 
 purpose with or without fee is hereby granted, provided that the above 
